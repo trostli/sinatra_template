@@ -1,3 +1,3 @@
-class Model < ActiveRecord::Base
+class URL < ActiveRecord::Base
 
 end
