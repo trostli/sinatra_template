@@ -1,2 +1,2 @@
-require './app/controllers/app.rb'
+require './app'
 run Sinatra::Application
