@@ -8,6 +8,8 @@ gem "sinatra-activerecord"
 gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem 'shotgun'
+gem "omniauth"
+gem "omniauth-facebook"
 
 gem 'dotenv'
 
