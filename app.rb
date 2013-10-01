@@ -43,6 +43,11 @@ get '/auth/failure' do
     MultiJson.encode(request.env)
 end
 
+get '/user/:id' do
+  @user = User.find(params[:id])
+  erb :profile
+end
+
 helpers do
 
   # I am lazy and don't like typing env['omniauth.auth'] all the time.
