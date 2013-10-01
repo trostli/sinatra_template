@@ -21,7 +21,7 @@ get '/auth/facebook/callback' do
   # This is shorthand for sending an HTTP Header of 'Location: http://yourhost.com/' and a response
   # code of 302
   flash[:notice] = "Welcome #{auth_hash[:info][:name]}"
-  flash[:notice] = "Here's the skinny: #{auth_hash[:info].each { |i| puts i }}"
+  flash[:picture] = auth_hash[:info][:image]
   User.from_auth_hash(auth_hash)
   redirect '/'
   # http://en.wikipedia.org/wiki/HTTP_302
