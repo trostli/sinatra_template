@@ -4,6 +4,7 @@ require_relative './app/config/environments.rb'
 require_relative './app/config/dotenv.rb'
 require_relative './app/models/user.rb'
 require_relative './app/config/omniauth.rb'
+require_relative './app/config/rack_flash.rb'
 
 SCOPE = 'email,read_stream'
 
@@ -19,7 +20,9 @@ end
 get '/auth/facebook/callback' do
   # This is shorthand for sending an HTTP Header of 'Location: http://yourhost.com/' and a response
   # code of 302
-   
+  flash[:notice] = "Welcome #{auth_hash[:info][:name]}"
+  flash[:notice] = "Here's the skinny: #{auth_hash[:info].each { |i| puts i }}"
+  User.from_auth_hash(auth_hash)
   redirect '/'
   # http://en.wikipedia.org/wiki/HTTP_302
 end
@@ -38,6 +41,15 @@ end
 get '/auth/failure' do
     content_type 'application/json'
     MultiJson.encode(request.env)
+end
+
+helpers do
+
+  # I am lazy and don't like typing env['omniauth.auth'] all the time.
+  # So I made an auth_hash helper
+  def auth_hash
+    env['omniauth.auth']
+  end
 end
 
 use Rack::Session::Cookie

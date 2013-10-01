@@ -10,6 +10,7 @@ gem 'sinatra-redirect-with-flash'
 gem 'shotgun'
 gem "omniauth"
 gem "omniauth-facebook"
+gem "rack-flash3"
 
 gem 'dotenv'
 
