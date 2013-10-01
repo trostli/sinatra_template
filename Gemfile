@@ -9,6 +9,8 @@ gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 gem 'shotgun'
 
+gem 'dotenv'
+
 group :development do
   gem 'sqlite3'
   gem "tux"
