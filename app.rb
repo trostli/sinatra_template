@@ -48,6 +48,11 @@ get '/user/:id' do
   erb :profile
 end
 
+ not_found do
+    status 404
+    erb :error
+  end
+
 helpers do
 
   # I am lazy and don't like typing env['omniauth.auth'] all the time.
