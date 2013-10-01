@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20130930174427) do
 
   create_table "users", force: true do |t|
     t.string   "full_name"
+    t.string   "image_url"
+    t.string   "location"
     t.integer  "facebook_uid"
     t.datetime "created_at"
     t.datetime "updated_at"

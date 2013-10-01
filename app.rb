@@ -40,7 +40,7 @@ end
 
 get '/auth/failure' do
     content_type 'application/json'
-    MultiJson.encode(request.env)
+    MultiJson.encode(request.env['omniauth.auth'])
 end
 
 get '/user/:id' do

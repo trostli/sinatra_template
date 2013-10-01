@@ -1,5 +1,8 @@
 <% if @user %>  
-  <p>Welcome to <%= @user.full_name %>'s profile</p>
+  <h1>Welcome to <%= @user.full_name %>'s profile</h1>
+  <p><img src= <%= @user.image_url %> ></p>
+  <p><%= @user.location %></p>
+
 <% else %>  
   <p>User not found.</p>  
 <% end %>  
