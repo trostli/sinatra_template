@@ -5,6 +5,7 @@ require_relative './app/config/dotenv.rb'
 require_relative './app/models/user.rb'
 require_relative './app/config/omniauth.rb'
 require_relative './app/config/rack_flash.rb'
+require_relative './app/config/echowrap.rb'
 
 SCOPE = 'email,read_stream'
 
@@ -46,6 +47,11 @@ end
 get '/user/:id' do
   @user = User.find(params[:id])
   erb :profile
+end
+
+get '/songs' do
+  @songs = Echowrap.song_search(:artist => 'Daft Punk')
+  erb :songs 
 end
 
  not_found do

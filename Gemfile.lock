@@ -21,8 +21,12 @@ GEM
     bond (0.4.3)
     builder (3.1.4)
     dotenv (0.9.0)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
+    echowrap (0.1.0)
+      faraday (~> 0.9.0.rc5)
+      multi_json (~> 1.8.0)
+      simple_oauth (~> 0.2)
+    faraday (0.9.0.rc5)
+      multipart-post (~> 1.1)
     hashie (2.0.5)
     httpauth (0.2.0)
     i18n (0.6.5)
@@ -63,6 +67,7 @@ GEM
       ripl (>= 0.3.5)
     shotgun (0.9)
       rack (>= 1.0)
+    simple_oauth (0.2.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -91,6 +96,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   dotenv
+  echowrap
   omniauth
   omniauth-facebook
   pg
